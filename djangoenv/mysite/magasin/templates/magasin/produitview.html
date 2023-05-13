@@ -1,0 +1,18 @@
+{% include 'magasin/base.html' %}
+{% block content %}
+{% csrf_token %}
+<ul>
+    {% for produit in produit_list %}
+    <li>{{produit.libelle}} </li>
+    
+     <li><img src='/media/{{ produit.img }}' class="card-img-top" height="200px"  width="200px"></li>
+     <li>{{produit.description}}</li>
+     <li>{{produit.prix}} DT.</li>
+     
+        
+  
+                
+    {% endfor %}
+  </ul>
+
+{% endblock %}
